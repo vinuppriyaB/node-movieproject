@@ -1,7 +1,7 @@
 import {createConnection} from "./index.js";
 import {client} from "./index.js";
 import bcrypt from "bcrypt";
-
+import { ObjectId } from "mongodb";
 
 // genPassword("password@123");
 
@@ -10,9 +10,10 @@ import bcrypt from "bcrypt";
     const result = await client
         .db("B27rwd")
         .collection("movies")
-        .findOne({ id: id});
+        .findOne({ _id: objectId(id)});
     return result;
 }
+
 async function getMovieByfilter(filter) {
     const client = await createConnection();
     const movie = await client

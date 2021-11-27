@@ -44,7 +44,6 @@
 // ];
 // const express =require("express");
 import express from "express";
-import fs from "fs";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -84,7 +83,7 @@ app.use("/movies",movieRouter);
 app.use("/user",userRouter);
   
 
-app.listen(PORT, () => console.log("the server is startedin", PORT));
+app.listen(PORT, () => console.log("the server is started in", PORT));
 
 
 
