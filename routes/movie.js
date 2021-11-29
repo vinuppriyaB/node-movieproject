@@ -15,7 +15,7 @@ import { auth } from "../middleware/auth.js"
 
 router
 .route("/")
-.get(auth, async(request, response) => {
+.get( async(request, response) => {
     console.log(request.query);
     let filter =request.query;
     const movie = await getMovieByfilter(filter);
