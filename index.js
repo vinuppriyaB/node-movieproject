@@ -43,6 +43,28 @@
 //   },
 // ];
 // const express =require("express");
+const recipe=[
+  {
+    "name":"Biriyani",
+    "pic":"https://1.bp.blogspot.com/-kDT-CfhJzfA/Xar8eIN2qsI/AAAAAAAAHpk/DRmgvCus3soQkeh0_XoL4fwX_tTDw5DFACLcBGAsYHQ/s1600/biriyani.jpg",
+  },
+  {
+    "name":"Panner Butter Masala",
+    "pic":"https://www.spiceupthecurry.com/wp-content/uploads/2021/04/paneer-butter-masala-1.jpg"
+  },
+  {
+    name:"Crispy Chicken",
+    pic:"https://www.licious.in/blog/wp-content/uploads/2020/12/Healthy-Crispy-chicken.jpg"
+  },
+  {
+      name:"Chicken Machurian",
+      pic:"https://i.ytimg.com/vi/AiLVG4dCY50/maxresdefault.jpg"
+  },
+  {
+      name:"Mushroom 65",
+      pic:"https://vaya.in/recipes/wp-content/uploads/2018/03/Mushroom-65.jpg"
+  }
+]
 import express from "express";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
@@ -81,7 +103,10 @@ app.get("/", (request, response) => {
 
 app.use("/movies",movieRouter);
 app.use("/user",userRouter);
-  
+// app.use("/receipe",receipeRouter);
+app.get("/recipe", (request, response) => {
+  response.send(recipe);
+});
 
 app.listen(PORT, () => console.log("the server is started in", PORT));
 
